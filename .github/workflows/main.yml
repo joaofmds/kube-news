@@ -26,3 +26,15 @@ jobs:
           tags: |
             joaofmds/live-kube-news:${{github.run_number}}
             joaofmds/live-kube-news:latest
+            
+  CD:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3.5.3
+      
+      - name: Definindo o context
+        uses: Azure/k8s-set-context@v3.0
+        with:
+          method: kubeconfig
+          kubeconfig: ${{secrets.K8S_CONFIG}}
