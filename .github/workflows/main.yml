@@ -23,6 +23,6 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags: 
+          tags: |
             joaofmds/live-kube-news:v1
-            joaofmds/live-kube-news:latest            
+            joaofmds/live-kube-news:latest
